@@ -7,7 +7,9 @@
   <body ng-app="directoryApp">
     <div class="container">
       <div class="row">
-        <h1>UF Directory App</h1>
+        <h1 style="font-family:verdana;"> UF Directory App</h1>
+        <h3 style="font-family:verdana;">Made By:Raymond Jones</h1>
+  <span class="glyphicon glyphicon-education" aria-hidden="true"></span>
       </div>
       <div class="row" ng-controller="ListingsController">
         <div class="col-md-6">
@@ -27,7 +29,7 @@
               </tr>
               <tr ng-repeat="listing in listings | filter:userInput"
               ng-click="itemCode.value = listing.code; itemIndex.value = $index;
-              "
+              " ng-cloak
 
               >
                 <td>{{listing.code}}</td>
@@ -62,7 +64,7 @@
         </div>
         <div class="col-md-6">
           <div class="jumbotron">
-            <h2 ng-if= "itemIndex.value != -1">
+            <h2 ng-if= "itemIndex.value != -1" ng-cloak>
             Latitude: {{ findItem().coordinates.latitude }} <br />
             Longitude: {{ findItem().coordinates.longitude }}<br />
             Address: {{ findItem().address }}<br />
